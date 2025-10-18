@@ -14,7 +14,7 @@ program define findar_test
     di as txt "  Stata version: " as res "`c(stata_version)'"
     
     di as txt _n "{hline 80}"
-    di as txt "Test 1: Simple HTTP connection"
+    di as txt "Test 1: HTTP connection (legacy)"
     di as txt "{hline 80}"
     
     tempfile test1
@@ -24,21 +24,8 @@ program define findar_test
         di as result "✓ HTTP connection successful"
     }
     else {
-        di as error "✗ HTTP connection failed (error: " _rc ")"
-        if "`c(os)'" == "MacOSX" {
-            di as txt _n "{bf:macOS Error " _rc " typically means:}"
-            if _rc == 2 {
-                di as txt "  • File not found / Network permissions denied"
-                di as txt "  • Stata doesn't have permission to access the network"
-                di as txt "  • Firewall is blocking the connection"
-            }
-            di as txt _n "{bf:Solutions:}"
-            di as txt "1. System Preferences > Security & Privacy > Privacy"
-            di as txt "   → Full Disk Access → Add Stata"
-            di as txt "2. System Preferences > Security & Privacy > Firewall"
-            di as txt "   → Allow Stata or disable firewall temporarily"
-            di as txt "3. Restart Stata after making changes"
-        }
+        di as txt "○ HTTP connection failed (error: " _rc ")"
+        di as txt "  Note: This is expected on macOS. findar uses HTTPS instead."
     }
     
     di as txt _n "{hline 80}"

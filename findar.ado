@@ -62,7 +62,8 @@ program define findar, rclass
         exit 198
     }
     
-    local base_url "http://export.arxiv.org/api/query?"
+    * Use HTTPS for better macOS compatibility
+    local base_url "https://export.arxiv.org/api/query?"
     local query_encoded = subinstr("`query'", " ", "+", .)
     local search_query "search_query=all:`query_encoded'"
     local url "`base_url'`search_query'&start=0&max_results=`maxresults'"
@@ -495,7 +496,10 @@ program define findar_parse_xml, rclass
     local content = ""
     file read `fh' line
     while r(eof) == 0 {
-        local content `"`content'`line'"'
+        * Skip XML declaration line which may cause parsing issues
+        if !ustrregexm(`"`line'"', "^<\?xml") {
+            local content `"`content'`line'"'
+        }
         file read `fh' line
     }
     file close `fh'
