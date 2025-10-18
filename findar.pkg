@@ -16,5 +16,7 @@ d Requires: Stata version 16.0 or later
 d
 f findar.ado
 f findar.sthlp
+f findar_test.ado
+f findar_test.sthlp
 f findar_example.do
 f findar_example.log

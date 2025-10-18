@@ -1,4 +1,4 @@
-*! findar.ado version 1.1.2  18oct2025
+*! findar.ado version 1.1.3  18oct2025
 
 program define findar, rclass
     version 16.0
@@ -7,6 +7,28 @@ program define findar, rclass
         di as error "Error: findar is only supported on Windows and macOS."
         di as error "Linux systems are not supported."
         exit 199
+    }
+    
+    * Test network connectivity first on macOS
+    if "`c(os)'" == "MacOSX" {
+        tempfile test_conn
+        capture quietly copy "https://export.arxiv.org/api/query?search_query=all:test&max_results=1" `test_conn', replace
+        if _rc != 0 {
+            di as error "Network connectivity test failed (error: " _rc ")"
+            di as txt _n "{bf:This appears to be a network/permissions issue on macOS.}"
+            di as txt _n "Common solutions:"
+            di as txt "1. Grant Stata network permissions:"
+            di as txt "   System Preferences > Security & Privacy > Privacy > Full Disk Access"
+            di as txt "   → Add Stata to the list"
+            di as txt _n "2. Check firewall settings:"
+            di as txt "   System Preferences > Security & Privacy > Firewall"
+            di as txt "   → Turn off firewall temporarily to test"
+            di as txt _n "3. Try in Terminal to verify network:"
+            di as txt "   curl https://export.arxiv.org/api/query?search_query=all:test&max_results=1"
+            di as txt _n "4. If using a VPN or proxy, try disabling it temporarily"
+            di as txt _n "5. Restart Stata after granting permissions"
+            exit _rc
+        }
     }
     
     gettoken first rest : 0, parse(",")
@@ -58,15 +80,36 @@ program define findar, rclass
     capture copy "`url'" `xml_file', replace
     
     if _rc != 0 {
-        di as error "Cannot connect to arXiv API (error: " _rc ")"
+        di as error _n "Cannot connect to arXiv API (error code: " _rc ")"
+        
         if "`c(os)'" == "MacOSX" {
-            di as error "Mac users: Check System Preferences > Security & Privacy"
-            di as error "Ensure Stata has permission to access the network"
+            di as txt _n "{bf:macOS Troubleshooting:}"
+            di as txt "1. Check System Preferences > Security & Privacy > Privacy"
+            di as txt "   → Ensure Stata has 'Full Disk Access' or 'Network' permission"
+            di as txt _n "2. Check your firewall settings:"
+            di as txt "   System Preferences > Security & Privacy > Firewall"
+            di as txt "   → Allow incoming connections for Stata"
+            di as txt _n "3. Try using HTTPS instead of HTTP:"
+            di as txt "   The issue might be with HTTP connections on macOS"
+            di as txt _n "4. Check your internet connection:"
+            di as txt "   • Open Safari and visit: https://arxiv.org"
+            di as txt "   • Try: ping export.arxiv.org (in Terminal)"
+            di as txt _n "5. Proxy/VPN issues:"
+            di as txt "   • If using VPN, try disconnecting temporarily"
+            di as txt "   • Check proxy settings in System Preferences > Network"
         }
-        di as txt _n "Troubleshooting:"
-        di as txt "  • Check your internet connection"
-        di as txt "  • Try again in a few moments"
-        di as txt "  • URL attempted: `url'"
+        
+        di as txt _n "{bf:General troubleshooting:}"
+        di as txt "• Internet connection active?"
+        di as txt "• Can you access other websites?"
+        di as txt "• Try again in a few moments (server might be busy)"
+        di as txt _n "URL attempted:"
+        di as txt "`url'"
+        
+        di as txt _n "{bf:Quick test:}"
+        di as txt "Try accessing this URL in your browser:"
+        di as txt "https://export.arxiv.org/api/query?search_query=all:test&max_results=1"
+        
         exit _rc
     }
     
