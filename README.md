@@ -77,7 +77,8 @@ findar, query(string) [options]
 | `detail` | Display detailed information |
 | `abstract` | Show paper abstracts |
 | `nogithub` | Disable GitHub search |
-| `saving(filename)` | Save results to dataset |
+| `save` | Keep results in memory (v1.1.5+) |
+| `saving(filename)` | Save results to file |
 | `replace` | Overwrite existing dataset |
 
 ## Examples
@@ -97,7 +98,10 @@ findar transformer attention, abstract
 * Detailed mode
 findar reinforcement learning, detail
 
-* Save to dataset
+* Save to memory (new in v1.1.5)
+findar computer vision, maxresults(10) save
+
+* Save to file
 findar computer vision, saving(cv_papers) replace
 
 * Standard syntax
@@ -202,6 +206,20 @@ Stata package. https://github.com/BlueDayDreeaming/findar
 - GitHub: [@BlueDayDreeaming](https://github.com/BlueDayDreeaming)
 
 ## Changelog
+
+### Version 1.1.5 (2025-10-18)
+- Added `save` option to keep results in memory
+- Fixed macOS connectivity issues (HTTPS support)
+- Added XML declaration skip for better parsing
+- Improved data handling (auto-clear when not saving)
+
+### Version 1.1.4 (2025-10-18)
+- HTTPS support for macOS compatibility
+- XML parsing improvements
+
+### Version 1.1.3 (2025-10-18)
+- Added network diagnostic tool (findar_test)
+- macOS-specific troubleshooting
 
 ### Version 1.1.1 (2025-10-18)
 - Added system compatibility check (Windows/macOS only)
