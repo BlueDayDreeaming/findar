@@ -202,8 +202,13 @@ Stata package. https://github.com/BlueDayDreeaming/findar
 
 ## Author
 
-**BlueDayDreeaming**
-- GitHub: [@BlueDayDreeaming](https://github.com/BlueDayDreeaming)
+**Yujun Lian**
+- Affiliation: Sun Yat-sen University, Guangzhou, China
+- Email: arlionn@163.com
+
+**Chucheng Wan**
+- Affiliation: Sun Yat-sen University, Guangzhou, China
+- Email: chucheng.wan@outlook.com
 
 ## Changelog
 
@@ -212,14 +217,11 @@ Stata package. https://github.com/BlueDayDreeaming/findar
 - Fixed macOS connectivity issues (HTTPS support)
 - Added XML declaration skip for better parsing
 - Improved data handling (auto-clear when not saving)
+- Removed diagnostic tool (findar_test)
 
 ### Version 1.1.4 (2025-10-18)
 - HTTPS support for macOS compatibility
 - XML parsing improvements
-
-### Version 1.1.3 (2025-10-18)
-- Added network diagnostic tool (findar_test)
-- macOS-specific troubleshooting
 
 ### Version 1.1.1 (2025-10-18)
 - Added system compatibility check (Windows/macOS only)
