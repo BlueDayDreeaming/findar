@@ -30,7 +30,7 @@ Author 5 email:
 
 Help keywords: findar, arXiv, GitHub, search, citation, bibliography, research
 
-File list: findar.ado findar.sthlp findar_example.do findar_example.log findar_test.ado findar_test.sthlp
+File list: findar.ado findar.sthlp findar_example.do findar_example.log
 
 Notes: findar searches arXiv (https://arxiv.org) for academic papers and 
 automatically discovers associated GitHub repositories. It provides an 
@@ -39,8 +39,7 @@ The command displays paper information including titles, authors, abstracts,
 arXiv IDs, and GitHub repository details (stars, forks, language). Search 
 results can be saved as Stata datasets (using 'save' option for memory or 
 'saving()' option for file) for further analysis. Citations can be exported 
-in BibTeX format. Includes a diagnostic tool (findar_test) for troubleshooting 
-network connectivity issues on macOS.
+in BibTeX format.
 
 Key features:
   • Search arXiv papers by keywords
@@ -57,6 +56,5 @@ Installation: net install findar, from(https://raw.githubusercontent.com/BlueDay
 
 For help: help findar
 For examples: do findar_example.do
-For macOS troubleshooting: help findar_test
 
 GitHub: https://github.com/BlueDayDreeaming/findar
