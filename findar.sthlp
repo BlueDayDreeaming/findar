@@ -46,8 +46,11 @@ mode{p_end}
 {synopt :{opt nogit:hub}}disable GitHub repository search{p_end}
 {synopt :{opt nogoo:gle}}disable Google search links in detailed 
 mode{p_end}
-{synopt :{opt saving(filename)}}save results to Stata dataset{p_end}
-{synopt :{opt replace}}overwrite existing dataset{p_end}
+{synopt :{opt save}}keep results in memory as dataset{p_end}
+{synopt :{opt saving(filename)}}save results to Stata dataset 
+file{p_end}
+{synopt :{opt replace}}overwrite existing dataset (use with 
+saving()){p_end}
 {synoptline}
 
 
@@ -128,13 +131,20 @@ paper metadata.
 {opt nogoogle} disables Google search links in detailed mode.
 
 {phang}
-{opt saving(filename)} saves the search results as a Stata dataset. 
-The dataset includes variables for paper titles, authors, arXiv IDs, 
-abstracts, GitHub URLs, star counts, and more.
+{opt save} keeps the search results in memory as a Stata dataset. Use 
+this option when you want to browse or analyze the results after the 
+search completes. Without this option or {opt saving()}, the results 
+are displayed but not stored.
 
 {phang}
-{opt replace} allows overwriting an existing dataset when using 
-{opt saving()}.
+{opt saving(filename)} saves the search results to a Stata dataset 
+file (.dta). The dataset includes variables for paper titles, authors, 
+arXiv IDs, abstracts, GitHub URLs, star counts, and more. Use 
+{cmd:describe} or {cmd:browse} to explore the saved data.
+
+{phang}
+{opt replace} allows overwriting an existing dataset file when using 
+{opt saving()}. This option is ignored when using {opt save} alone.
 
 
 {marker examples}{...}
@@ -171,7 +181,14 @@ Standard syntax with query option
 {phang2}{cmd:. findar, query("computer vision") maxresults(5)}
 
 {pstd}
-Save results to dataset
+Keep results in memory for browsing
+
+{phang2}{cmd:. findar deep learning, maxresults(10) save}{p_end}
+{phang2}{cmd:. browse}{p_end}
+{phang2}{cmd:. list title arxiv_id in 1/5}
+
+{pstd}
+Save results to dataset file
 
 {phang2}{cmd:. findar causal inference, maxresults(20) ///}{p_end}
 {phang3}{cmd:saving(causal_papers) replace}

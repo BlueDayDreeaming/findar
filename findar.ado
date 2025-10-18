@@ -34,14 +34,14 @@ program define findar, rclass
     gettoken first rest : 0, parse(",")
     
     if usubstr(strtrim("`first'"), 1, 1) == "," {
-        syntax, Query(string) [MAXResults(integer 10) DETail NOGIThub ABstract saving(string) replace NOGoogle]
+        syntax, Query(string) [MAXResults(integer 10) DETail NOGIThub ABstract SAVE saving(string) replace NOGoogle]
     }
     else {
         local query `"`first'"'
         local simplified = 1
         if `"`rest'"' != "" {
             local 0 `"`rest'"'
-            syntax [, MAXResults(integer 10) DETail NOGIThub ABstract saving(string) replace NOGoogle]
+            syntax [, MAXResults(integer 10) DETail NOGIThub ABstract SAVE saving(string) replace NOGoogle]
         }
         else {
             local maxresults = 5
@@ -60,6 +60,14 @@ program define findar, rclass
     if `maxresults' <= 0 | `maxresults' > 100 {
         di as error "maxresults() must be between 1 and 100"
         exit 198
+    }
+    
+    * Handle save option: if save is specified without saving(), keep data in memory
+    if "`save'" != "" & "`saving'" == "" {
+        local save_to_memory = 1
+    }
+    else {
+        local save_to_memory = 0
     }
     
     * Use HTTPS for better macOS compatibility
@@ -114,6 +122,7 @@ program define findar, rclass
         exit _rc
     }
     
+    * Parse XML - create dataset only if save/saving is specified
     findar_parse_xml "`xml_file'"
     local count = r(count)
     
@@ -402,7 +411,14 @@ program define findar, rclass
     
     if "`saving'" != "" {
         save "`saving'", `replace'
-        di as txt _n "Data saved: " as res "`saving'"
+        di as txt _n "Data saved to file: " as res "`saving'"
+    }
+    else if `save_to_memory' == 1 {
+        di as txt _n "Data saved to memory (use {stata browse:browse} to view)"
+    }
+    else {
+        * User didn't request save, clear the dataset
+        clear
     }
     
     return scalar count = `count'
