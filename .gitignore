@@ -1,0 +1,14 @@
+# Stata temporary files
+*.dta
+*.smcl
+*.gph
+*.log.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~

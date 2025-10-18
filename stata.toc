@@ -1,0 +1,5 @@
+v 3
+d findar: Search arXiv papers with GitHub integration
+d BlueDayDreeaming
+d
+p findar Search arXiv papers with GitHub integration

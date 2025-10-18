@@ -1,0 +1,20 @@
+v 3
+d findar: Search arXiv papers with GitHub integration
+d
+d findar searches arXiv (https://arxiv.org) for academic papers and 
+d automatically finds associated GitHub repositories. It provides an 
+d integrated workflow for discovering research papers and their code 
+d implementations.
+d
+d Distribution-Date: 20251018
+d License: MIT
+d
+d Author: BlueDayDreeaming
+d Support: https://github.com/BlueDayDreeaming/findar
+d
+d Requires: Stata version 16.0 or later
+d
+f findar.ado
+f findar.sthlp
+f findar_example.do
+f findar_example.log
