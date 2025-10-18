@@ -1,4 +1,4 @@
-*! findar.ado version 1.1.1  18oct2025
+*! findar.ado version 1.1.2  18oct2025
 
 program define findar, rclass
     version 16.0
@@ -59,6 +59,14 @@ program define findar, rclass
     
     if _rc != 0 {
         di as error "Cannot connect to arXiv API (error: " _rc ")"
+        if "`c(os)'" == "MacOSX" {
+            di as error "Mac users: Check System Preferences > Security & Privacy"
+            di as error "Ensure Stata has permission to access the network"
+        }
+        di as txt _n "Troubleshooting:"
+        di as txt "  • Check your internet connection"
+        di as txt "  • Try again in a few moments"
+        di as txt "  • URL attempted: `url'"
         exit _rc
     }
     
@@ -189,7 +197,7 @@ program define findar, rclass
                                     local api_url "https://api.github.com/repos/`owner'/`repo'"
                                     
                                     tempfile api_result
-                                    copy "`api_url'" `api_result', replace
+                                    quietly copy "`api_url'" `api_result', replace
                                     
                                     tempname fh_api
                                     file open `fh_api' using `api_result', read text
@@ -317,9 +325,12 @@ program define findar, rclass
             
             local google_br ""
             if "`nogoogle'" == "" & "`nogithub'" == "" {
-                mata: st_local("title_encode", urlencode(`"`disp_title'"'))
-                local google_url "https://www.google.com/search?q=`title_encode'+github"
-                local google_br `"{browse "`google_url'":Google}"'
+                findar_url_encode `"`disp_title'"'
+                local title_encode = r(encoded)
+                if "`title_encode'" != "" {
+                    local google_url "https://www.google.com/search?q=`title_encode'+github"
+                    local google_br `"{browse "`google_url'":Google}"'
+                }
             }
             
             local github_br ""
@@ -355,6 +366,36 @@ program define findar, rclass
         return scalar arxiv_found = `from_arxiv'
         return scalar not_found = `not_found'
     }
+end
+
+cap program drop findar_url_encode
+program define findar_url_encode, rclass
+    version 16.0
+    args input_string
+    
+    * Try using Mata first (more efficient)
+    capture mata: st_local("encoded", urlencode(st_local("input_string")))
+    if _rc == 0 & "`encoded'" != "" {
+        return local encoded "`encoded'"
+        exit
+    }
+    
+    * Fallback: Simple URL encoding for common characters
+    local result = "`input_string'"
+    local result = subinstr("`result'", " ", "%20", .)
+    local result = subinstr("`result'", "&", "%26", .)
+    local result = subinstr("`result'", "=", "%3D", .)
+    local result = subinstr("`result'", "+", "%2B", .)
+    local result = subinstr("`result'", "#", "%23", .)
+    local result = subinstr("`result'", "?", "%3F", .)
+    local result = subinstr("`result'", "/", "%2F", .)
+    local result = subinstr("`result'", ":", "%3A", .)
+    local result = subinstr("`result'", "@", "%40", .)
+    local result = subinstr("`result'", "(", "%28", .)
+    local result = subinstr("`result'", ")", "%29", .)
+    local result = subinstr("`result'", ",", "%2C", .)
+    
+    return local encoded "`result'"
 end
 
 cap program drop findar_display_abstract
@@ -536,11 +577,13 @@ program define findar_fetch_repo_info
     
     local api_url "https://api.github.com/repos/`full'"
     tempfile result
-    capture copy "`api_url'" `result', replace
+    capture quietly copy "`api_url'" `result', replace
     if _rc != 0 exit
     
     tempname fh
-    file open `fh' using `result', read text
+    capture file open `fh' using `result', read text
+    if _rc != 0 exit
+    
     local json = ""
     file read `fh' line
     while r(eof) == 0 {
