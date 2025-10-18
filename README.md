@@ -200,7 +200,7 @@ Stata package. https://github.com/BlueDayDreeaming/findar
 
 [MIT License](LICENSE)
 
-## Author
+## Authors
 
 **Yujun Lian**
 - Affiliation: Sun Yat-sen University, Guangzhou, China
