@@ -8,13 +8,13 @@ DOI:
 
 Title: findar - Search arXiv papers and discover GitHub repositories
 
-Author 1 name: BlueDayDreeaming
-Author 1 from: 
-Author 1 email: 
+Author 1 name: Yujun Lian
+Author 1 from: Sun Yat-sen University, Guangzhou, China
+Author 1 email: arlionn@163.com
 
-Author 2 name:  
-Author 2 from:  
-Author 2 email: 
+Author 2 name: Chucheng Wan
+Author 2 from: Sun Yat-sen University, Guangzhou, China
+Author 2 email: chucheng.wan@outlook.com
 
 Author 3 name:  
 Author 3 from:  
