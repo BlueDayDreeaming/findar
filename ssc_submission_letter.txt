@@ -1,0 +1,135 @@
+Dear Professor Christopher F. Baum,
+
+We are writing to request the distribution of our new Stata package "findar" 
+through the Boston College Statistical Software Components (SSC) archive.
+
+PACKAGE INFORMATION:
+====================
+
+Package Name: findar
+Version: 1.1.5
+Release Date: December 16, 2025
+License: MIT
+Stata Version Required: 16.0 or later
+Platforms: Windows and macOS
+
+DESCRIPTION:
+============
+
+findar is a Stata package that seamlessly integrates arXiv paper search 
+with automatic GitHub repository discovery. Users can search for academic 
+papers on arXiv and automatically locate associated GitHub repositories 
+containing code implementations.
+
+Key Features:
+- Query academic papers from arXiv.org by keywords
+- Automatically extract and search for GitHub repositories from paper metadata
+- Display papers with star counts and repository information
+- Export results as Stata datasets for further analysis
+- Support for multiple search options (maxresults, detail, abstract, etc.)
+
+AUTHORS:
+========
+
+1. Chucheng Wan (chucheng.wan@outlook.com)
+   Sun Yat-sen University, Guangzhou, China
+
+2. Yile Zhang (zhangyle5@mail2.sysu.edu.cn)
+   Sun Yat-sen University, Guangzhou, China
+
+3. Xinyi Huang (huangxy577@mail2.sysu.edu.cn)
+   Sun Yat-sen University, Guangzhou, China
+
+4. Qin Qin (qinq25@mail2.sysu.edu.cn)
+   Sun Yat-sen University, Guangzhou, China
+
+5. Xinyi Yi (3031727931@qq.com)
+   Sun Yat-sen University, Guangzhou, China
+
+REPOSITORY:
+===========
+
+GitHub: https://github.com/BlueDayDreeaming/findar
+
+INSTALLATION:
+=============
+
+Once approved, users can install the package using:
+net install findar, from("https://raw.githubusercontent.com/BlueDayDreeaming/findar/main/")
+
+Or through SSC:
+ssc install findar
+
+USAGE EXAMPLE:
+==============
+
+Basic search:
+    findar machine learning
+
+Search with options:
+    findar deep learning, maxresults(10) detail abstract
+
+Search without GitHub integration:
+    findar neural networks, nogithub
+
+Save results to dataset:
+    findar reinforcement learning, maxresults(5) save
+
+INCLUDED FILES:
+===============
+
+- findar.ado (Main program file)
+- findar.sthlp (Help file with examples and documentation)
+- findar_example.do (Example script demonstrating usage)
+- README.md (Package documentation)
+- LICENSE (MIT License)
+
+REQUIREMENTS:
+=============
+
+- Stata 16.0 or later
+- Windows or macOS system
+- Internet connection for arXiv and GitHub API access
+
+SYSTEM REQUIREMENTS:
+====================
+
+The package uses Stata's native copy command to query:
+- arXiv API: https://export.arxiv.org/api/query
+- GitHub API: https://api.github.com
+
+No additional dependencies or external software required.
+
+We believe findar will be a valuable addition to the SSC archive, providing 
+researchers with an efficient tool to discover both academic papers and their 
+related code repositories.
+
+We have thoroughly tested the package across different systems and use cases. 
+All files are ready for distribution.
+
+Please let us know if you require any additional information or modifications 
+before inclusion in the SSC archive.
+
+Thank you for considering our submission.
+
+Sincerely,
+
+Chucheng Wan
+On behalf of the findar development team
+Sun Yat-sen University, Guangzhou, China
+Email: chucheng.wan@outlook.com
+
+---
+
+SUBMISSION CHECKLIST:
+====================
+[ ] Author information and contact details provided
+[ ] Package files (*.ado, *.sthlp) included
+[ ] Help file formatted correctly
+[ ] Example do-file provided
+[ ] License file included (MIT)
+[ ] GitHub repository URL provided
+[ ] Installation instructions included
+[ ] System requirements documented
+[ ] Package functionality tested
+[ ] Stata version compatibility confirmed (16.0+)
