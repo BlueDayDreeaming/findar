@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.1.1  16dec2025}{...}
+{* *! version 1.1.5  16dec2025}{...}
 {viewerjumpto "Syntax" "findar##syntax"}{...}
 {viewerjumpto "Description" "findar##description"}{...}
 {viewerjumpto "Options" "findar##options"}{...}

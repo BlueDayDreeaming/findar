@@ -1,562 +1,472 @@
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
       name:  <unnamed>
-       log:  c:\Users\18522\.vscode\extensions\deepecon.stata-mcp-0.3.0\logs\fi
-> ndar_example_mcp.log
+       log:  D:\User\private\Desktop\stata\findar_final\findar_example.log
   log type:  text
- opened on:  18 Oct 2025, 20:27:57
+ opened on:  16 Dec 2025, 19:50:06
 
-. *****************************************************************************
-> ***
-. * findar_example.do
-. * Example usage of the findar command
-. * Author: BlueDayDreeaming
-. * Date: 18oct2025
-. * Version: 1.1.5
-. *****************************************************************************
-> ***
-. 
-. clear all
-
-. set more off
-
-. 
-. * COMMENTED OUT BY MCP: log using findar_example.log, replace text
 . 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-. display as text "findar - Search arXiv papers and discover GitHub repositorie
-> s"
+. display as text "findar - Search arXiv papers and discover GitHub repositories"
 findar - Search arXiv papers and discover GitHub repositories
 
 . display as text "Version 1.1.5"
 Version 1.1.5
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Example 1: Basic search using simplified syntax
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . display as text "Example 1: Basic search - simplified syntax (5 results)"
 Example 1: Basic search - simplified syntax (5 results)
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . findar deep learning
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: deep learning
 Max results: 5
 GitHub search: ENABLED (default)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 5 papers.
 
 Starting GitHub search...
 
-  [1/5] Opening the black box of deep learning...
+  [1/5] Learn to Accumulate Evidence from All Training Samples:...
 
-  [2/5] Concept-Oriented Deep Learning...
+  [2/5] The Modern Mathematics of Deep Learning...
 
-  [3/5] Deep learning research landscape & roadmap in a nutshel...
+  [3/5] Deep Learning and Computational Physics (Lecture Notes)...
 
-  [4/5] A First Look at Deep Learning Apps on Smartphones...
+  [4/5] A multitask deep learning model for real-time deploymen...
 
-  [5/5] Geometrization of deep networks for the interpretabilit...
+  [5/5] DILIE: Deep Internal Learning for Image Enhancement...
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 GitHub Search Results:
   Found from arXiv metadata: 0
   Not found:                 5
   Success rate:              0%
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Top 5 results (arXiv | PDF | DOI | GitHub)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[1] Opening the black box of deep learning
+[1] Learn to Accumulate Evidence from All Training Samples: Theo
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[2] Concept-Oriented Deep Learning
-Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+[2] The Modern Mathematics of Deep Learning
+Links: arXiv PDF DOI
+--------------------------------------------------------------------------------
 
-[3] Deep learning research landscape & roadmap in a nutshell: pa
+[3] Deep Learning and Computational Physics (Lecture Notes)
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[4] A First Look at Deep Learning Apps on Smartphones
+[4] A multitask deep learning model for real-time deployment in 
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[5] Geometrization of deep networks for the interpretability of 
+[5] DILIE: Deep Internal Learning for Image Enhancement
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Example 2: Search with specified number of results
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . display as text "Example 2: Search with 3 results"
 Example 2: Search with 3 results
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . findar machine learning, maxresults(3)
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: machine learning
 Max results: 3
 GitHub search: ENABLED (default)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 3 papers.
 
 Starting GitHub search...
 
-  [1/3] Lecture Notes: Optimization for Machine Learning...
+  [1/3] Changing Data Sources in the Age of Machine Learning fo...
 
-  [2/3] An Optimal Control View of Adversarial Machine Learning...
+  [2/3] DOME: Recommendations for supervised machine learning v...
 
-  [3/3] Minimax deviation strategies for machine learning and r...
+  [3/3] Learning Curves for Decision Making in Supervised Machi...
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 GitHub Search Results:
   Found from arXiv metadata: 0
   Not found:                 3
   Success rate:              0%
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Top 3 results (arXiv | PDF | DOI | GitHub)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[1] Lecture Notes: Optimization for Machine Learning
+[1] Changing Data Sources in the Age of Machine Learning for Off
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[2] An Optimal Control View of Adversarial Machine Learning
+[2] DOME: Recommendations for supervised machine learning valida
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[3] Minimax deviation strategies for machine learning and recogn
-Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+[3] Learning Curves for Decision Making in Supervised Machine Le
+Links: arXiv PDF DOI
+--------------------------------------------------------------------------------
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Example 3: Display abstracts
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . display as text "Example 3: Display abstracts"
 Example 3: Display abstracts
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . findar transformer attention, maxresults(2) abstract
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: transformer attention
 Max results: 2
 GitHub search: ENABLED (default)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 2 papers.
 
 Starting GitHub search...
 
-  [1/2] Simulating Hard Attention Using Soft Attention...
+  [1/2] Dilated Neighborhood Attention Transformer...
 
-  [2/2] Attention-Only Transformers and Implementing MLPs with ...
-
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 GitHub Search Results:
-  Found from arXiv metadata: 0
-  Not found:                 2
-  Success rate:              0%
--------------------------------------------------------------------------------
-> -
+  Found from arXiv metadata: 1
+  Not found:                 0
+  Success rate:              50%
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Top 2 results (arXiv | PDF | DOI | GitHub)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[1] Simulating Hard Attention Using Soft Attention
+[1] Dilated Neighborhood Attention Transformer
+Links: arXiv PDF GitHub(1163stars)
+
+Abstract:
+  Transformers are quickly becoming one of the most heavily applied deep 
+  learning architectures across modalities, domains, and tasks. In vision, 
+  on top of ongoing efforts into plain transformers, hierarchical 
+  transformers have also gained significant attention, thanks to their 
+  performance and easy integration into existing frameworks. These models 
+  typically employ localized attention mechanisms, such as the 
+  sliding-window Neighborhood Attention (NA) or Swin Transformer's Shifted 
+  Window Self Attention. While effective at reducing self attention's 
+  quadratic complexity, local attention weakens two of the most desirable 
+  properties of self attention: long range inter-dependency modeling, and 
+  global receptive field. In this paper, we introduce Dilated Neighborhood 
+  Attention (DiNA), a natural, flexible and efficient extension to NA that 
+  can capture more global context and expand receptive fields exponentially 
+  at no additional cost. NA's local attention and DiNA's sparse global 
+  attention complement each other, and therefore we introduce Dilated 
+  Neighborhood Attention Transformer (DiNAT), a new hierarchical vision 
+  transformer built upon both. DiNAT variants enjoy significant improvements 
+  over strong baselines such as NAT, Swin, and ConvNeXt. Our large model is 
+  faster and ahead of its Swin counterpart by 1.6% box AP in COCO object 
+  detection, 1.4% mask AP in COCO instance segmentation, and 1.4% mIoU in 
+  ADE20K semantic segmentation. Paired with new frameworks, our large 
+  variant is the new state of the art panoptic segmentation model on COCO 
+  (58.5 PQ) and ADE20K (49.4 PQ), and instance segmentation model on 
+  Cityscapes (45.1 AP) and ADE20K (35.4 AP) (no extra data). It also matches 
+  the state of the art specialized semantic segmentation models on ADE20K 
+  (58.1 mIoU), and ranks second on Cityscapes (84.5 mIoU) (no extra data).
+--------------------------------------------------------------------------------
+
+[2] Mask-Attention-Free Transformer for 3D Instance Segmentation
 Links: arXiv PDF
 
 Abstract:
-  We study conditions under which transformers using soft attention 
-  cansimulate hard attention, that is, effectively focus all attention on a 
-  subsetof positions. First, we examine several subclasses of languages 
-  recognized byhard-attention transformers, which can be defined in variants 
-  of lineartemporal logic. We demonstrate how soft-attention transformers 
-  can computeformulas of these logics using unbounded positional embeddings 
-  or temperaturescaling. Second, we demonstrate how temperature scaling 
-  allows softmaxtransformers to simulate general hard-attention 
-  transformers, using atemperature that depends on the minimum gap between 
-  the maximum attentionscores and other attention scores.
--------------------------------------------------------------------------------
-> -
-
-[2] Attention-Only Transformers and Implementing MLPs with Atten
-Links: arXiv PDF
-
-Abstract:
-  The transformer architecture is widely used in machine learning models 
-  andconsists of two alternating sublayers: attention heads and MLPs. We 
-  prove thatan MLP neuron can be implemented by a masked attention head with 
-  internaldimension 1 so long as the MLP's activation function comes from a 
-  restrictedclass including SiLU and close approximations of ReLU and GeLU. 
-  This allows oneto convert an MLP-and-attention transformer into an 
-  attention-only transformerat the cost of greatly increasing the number of 
-  attention heads. We also provethat attention heads can perform the 
-  components of an MLP (lineartransformations and activation functions) 
-  separately. Finally, we prove thatattention heads can encode arbitrary 
-  masking patterns in their weight matricesto within arbitrarily small error.
--------------------------------------------------------------------------------
-> -
+  Recently, transformer-based methods have dominated 3D instance 
+  segmentation, where mask attention is commonly involved. Specifically, 
+  object queries are guided by the initial instance masks in the first 
+  cross-attention, and then iteratively refine themselves in a similar 
+  manner. However, we observe that the mask-attention pipeline usually leads 
+  to slow convergence due to low-recall initial instance masks. Therefore, 
+  we abandon the mask attention design and resort to an auxiliary center 
+  regression task instead. Through center regression, we effectively 
+  overcome the low-recall issue and perform cross-attention by imposing 
+  positional prior. To reach this goal, we develop a series of 
+  position-aware designs. First, we learn a spatial distribution of 3D 
+  locations as the initial position queries. They spread over the 3D space 
+  densely, and thus can easily capture the objects in a scene with a high 
+  recall. Moreover, we present relative position encoding for the 
+  cross-attention and iterative refinement for more accurate position 
+  queries. Experiments show that our approach converges 4x faster than 
+  existing work, sets a new state of the art on ScanNetv2 3D instance 
+  segmentation benchmark, and also demonstrates superior performance across 
+  various datasets. Code and models are available at 
+  https://github.com/dvlab-research/Mask-Attention-Free-Transformer.
+--------------------------------------------------------------------------------
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Example 4: Detailed mode
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . display as text "Example 4: Detailed information mode"
 Example 4: Detailed information mode
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . findar reinforcement learning, maxresults(2) detail
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: reinforcement learning
 Max results: 2
 GitHub search: ENABLED (default)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 2 papers.
 
 Starting GitHub search...
 
-  [1/2] Some Insights into Lifelong Reinforcement Learning Syst...
+  [1/2] ARLBench: Flexible and Efficient Benchmarking for Hyper...
 
-  [2/2] Counterexample-Guided Repair of Reinforcement Learning ...
-
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 GitHub Search Results:
-  Found from arXiv metadata: 0
-  Not found:                 2
-  Success rate:              0%
--------------------------------------------------------------------------------
-> -
+  Found from arXiv metadata: 1
+  Not found:                 0
+  Success rate:              50%
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Detailed Results
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[1] Some Insights into Lifelong Reinforcement Learning Systems
-Authors: Changjian Li
-Published: 2020-01-27T07:26:12Z
+[1] ARLBench: Flexible and Efficient Benchmarking for Hyperparameter Optimization in Reinforcement
+>  Learning
+Authors: Jannis Becktepe, Julian Dierkes, Carolin Benjamins, Aditya Mohan, David Salinas, Raghu Ra
+> jan, Frank Hutter, Holger Hoos, Marius Lindauer, Theresa Eimer
+Published: 2024-09-27T15:22:28Z
+
+Links: arXiv  Google  GitHub(automl/arlbench_★26_Python)
+--------------------------------------------------------------------------------
+
+[2] Causal-Paced Deep Reinforcement Learning
+Authors: Geonwoo Cho, Jaegyun Im, Doyoon Kim, Sundong Kim
+Published: 2025-06-24T20:15:01Z
 
 Links: arXiv  Google  
--------------------------------------------------------------------------------
-> -
-
-[2] Counterexample-Guided Repair of Reinforcement Learning Systems Using Safety
->  Critics
-Authors: David Boetius, Stefan Leue
-Published: 2024-05-24T10:56:51Z
-
-Links: arXiv  Google  
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Example 5: Search without GitHub integration
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . display as text "Example 5: Disable GitHub search"
 Example 5: Disable GitHub search
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . findar neural networks, maxresults(2) nogithub
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: neural networks
 Max results: 2
 GitHub search: DISABLED
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 2 papers.
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Top 2 results (arXiv | PDF | DOI)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[1] Lecture Notes: Neural Network Architectures
-Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+[1] The Deep Arbitrary Polynomial Chaos Neural Network or how De
+Links: arXiv PDF DOI
+--------------------------------------------------------------------------------
 
-[2] Self-Organizing Multilayered Neural Networks of Optimal Comp
-Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+[2] Learning Active Subspaces and Discovering Important Features
+Links: arXiv PDF DOI
+--------------------------------------------------------------------------------
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Example 6: Standard syntax with query option
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . display as text "Example 6: Standard syntax"
 Example 6: Standard syntax
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . findar, query("computer vision") maxresults(2)
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: computer vision
 Max results: 2
 GitHub search: ENABLED (default)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 2 papers.
 
 Starting GitHub search...
 
-  [1/2] Implications of Computer Vision Driven Assistive Techno...
+  [1/2] WiCV 2019: The Sixth Women In Computer Vision Workshop...
 
-  [2/2] Second Croatian Computer Vision Workshop (CCVW 2013)...
+  [2/2] Spatial Monitoring and Insect Behavioural Analysis Usin...
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 GitHub Search Results:
   Found from arXiv metadata: 0
   Not found:                 2
   Success rate:              0%
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Example 7: Save results to memory (new in v1.1.5)
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . display as text "Example 7: Save results to memory"
 Example 7: Save results to memory
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . clear
 
 . findar deep learning, maxresults(5) save
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: deep learning
 Max results: 5
 GitHub search: ENABLED (default)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 5 papers.
 
 Starting GitHub search...
 
-  [1/5] Opening the black box of deep learning...
+  [1/5] Learn to Accumulate Evidence from All Training Samples:...
 
-  [2/5] Concept-Oriented Deep Learning...
+  [2/5] The Modern Mathematics of Deep Learning...
 
-  [3/5] Deep learning research landscape & roadmap in a nutshel...
+  [3/5] Deep Learning and Computational Physics (Lecture Notes)...
 
-  [4/5] A First Look at Deep Learning Apps on Smartphones...
+  [4/5] A multitask deep learning model for real-time deploymen...
 
-  [5/5] Geometrization of deep networks for the interpretabilit...
+  [5/5] DILIE: Deep Internal Learning for Image Enhancement...
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 GitHub Search Results:
   Found from arXiv metadata: 0
   Not found:                 5
   Success rate:              0%
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Top 5 results (arXiv | PDF | DOI | GitHub)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[1] Opening the black box of deep learning
+[1] Learn to Accumulate Evidence from All Training Samples: Theo
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[2] Concept-Oriented Deep Learning
-Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+[2] The Modern Mathematics of Deep Learning
+Links: arXiv PDF DOI
+--------------------------------------------------------------------------------
 
-[3] Deep learning research landscape & roadmap in a nutshell: pa
+[3] Deep Learning and Computational Physics (Lecture Notes)
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[4] A First Look at Deep Learning Apps on Smartphones
+[4] A multitask deep learning model for real-time deployment in 
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[5] Geometrization of deep networks for the interpretability of 
+[5] DILIE: Deep Internal Learning for Image Enhancement
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 Data saved to memory (use browse to view)
 
@@ -571,10 +481,10 @@ Dataset in memory:
 Contains data
  Observations:             5                  
     Variables:            12                  
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 Variable      Storage   Display    Value
     name         type    format    label      Variable label
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 arxiv_id        str50   %50s                  
 title           str500  %500s                 
 summary         strL    %9s                   
@@ -587,7 +497,7 @@ gh_repo         str200  %200s
 gh_url          str300  %300s                 
 gh_stars        long    %12.0g                
 gh_lang         str50   %50s                  
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 Sorted by: 
      Note: Dataset has changed since last saved.
 
@@ -598,14 +508,10 @@ First 3 results:
 
 . list title arxiv_id in 1/3, clean noobs abbreviate(50)
 
-                                                                               
->                                     title       arxiv_id  
-                                                                               
->    Opening the black box of deep learning   1805.08355v1  
-                                                                               
->            Concept-Oriented Deep Learning   1806.01756v1  
-    Deep learning research landscape & roadmap in a nutshell: past, present and
->  future -- Towards deep cortical learning   1908.02130v1  
+                                                                          title       arxiv_id  
+    Learn to Accumulate Evidence from All Training Samples: Theory and Practice   2306.11113v2  
+                                        The Modern Mathematics of Deep Learning   2105.04026v2  
+                        Deep Learning and Computational Physics (Lecture Notes)   2301.00942v1  
 
 . 
 . display as text _n "GitHub information (if any):"
@@ -615,94 +521,78 @@ GitHub information (if any):
 . list title gh_repo gh_stars if gh_url != "", clean noobs abbreviate(30)
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Example 8: Save results to dataset file
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . display as text "Example 8: Save results to file"
 Example 8: Save results to file
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . clear
 
 . findar causal inference, maxresults(5) saving(findar_results) replace
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: causal inference
 Max results: 5
 GitHub search: ENABLED (default)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 5 papers.
 
 Starting GitHub search...
 
-  [1/5] Computational Causal Inference...
+  [1/5] Causal inference via algebraic geometry: feasibility te...
 
-  [2/5] Causal inference for process understanding in Earth sci...
+  [2/5] Quantitative probing: Validating causal models using qu...
 
-  [3/5] Causal models on probability spaces...
+  [3/5] A Unifying Causal Framework for Analyzing Dataset Shift...
 
-  [4/5] Challenges of Using Text Classifiers for Causal Inferen...
+  [4/5] OpportunityFinder: A Framework for Automated Causal Inf...
 
-  [5/5] Causal programming: inference with structural causal mo...
+  [5/5] Text as Causal Mediators: Research Design for Causal Es...
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 GitHub Search Results:
   Found from arXiv metadata: 0
   Not found:                 5
   Success rate:              0%
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Top 5 results (arXiv | PDF | DOI | GitHub)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[1] Computational Causal Inference
-Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+[1] Causal inference via algebraic geometry: feasibility tests f
+Links: arXiv PDF DOI
+--------------------------------------------------------------------------------
 
-[2] Causal inference for process understanding in Earth sciences
-Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+[2] Quantitative probing: Validating causal models using quantit
+Links: arXiv PDF DOI
+--------------------------------------------------------------------------------
 
-[3] Causal models on probability spaces
-Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+[3] A Unifying Causal Framework for Analyzing Dataset Shift-stab
+Links: arXiv PDF DOI
+--------------------------------------------------------------------------------
 
-[4] Challenges of Using Text Classifiers for Causal Inference
+[4] OpportunityFinder: A Framework for Automated Causal Inferenc
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[5] Causal programming: inference with structural causal models 
+[5] Text as Causal Mediators: Research Design for Causal Estimat
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 (file findar_results.dta not found)
 file findar_results.dta saved
 
@@ -718,11 +608,11 @@ Saved dataset structure:
 
 Contains data from findar_results.dta
  Observations:             5                  
-    Variables:            12                  18 Oct 2025 20:28
--------------------------------------------------------------------------------
+    Variables:            12                  16 Dec 2025 19:50
+--------------------------------------------------------------------------------------------------
 Variable      Storage   Display    Value
     name         type    format    label      Variable label
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 arxiv_id        str50   %50s                  
 title           str500  %500s                 
 summary         strL    %9s                   
@@ -735,7 +625,7 @@ gh_repo         str200  %200s
 gh_url          str300  %300s                 
 gh_stars        long    %12.0g                
 gh_lang         str50   %50s                  
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------
 Sorted by: 
 
 . 
@@ -745,18 +635,18 @@ First 5 results:
 
 . list title arxiv_id published in 1/5, clean noobs
 
-                                                                               
->               title       arxiv_id              published  
-                                                                    Computation
-> al Causal Inference   2007.10979v1   2020-07-21T17:57:43Z  
-                                      Causal inference for process understandin
-> g in Earth sciences   2105.00912v1   2021-05-03T14:47:44Z  
-                                                               Causal models on
->  probability spaces   1907.01672v1   2019-07-02T22:58:36Z  
-                                         Challenges of Using Text Classifiers f
-> or Causal Inference   1810.00956v1   2018-10-01T20:08:40Z  
-    Causal programming: inference with structural causal models as finding inst
-> ances of a relation   1805.01960v1   2018-05-04T23:14:36Z  
+                                                                                                  
+>                            title       arxiv_id              published  
+    Causal inference via algebraic geometry: feasibility tests for functional causal structures wi
+> th two binary observed variables   1506.03880v2   2015-06-12T00:51:44Z  
+                                                Quantitative probing: Validating causal models usi
+> ng quantitative domain knowledge   2209.03013v1   2022-09-07T09:19:11Z  
+                                                A Unifying Causal Framework for Analyzing Dataset 
+> Shift-stable Learning Algorithms   1905.11374v5   2019-05-27T17:56:39Z  
+                                                                     OpportunityFinder: A Framewor
+> k for Automated Causal Inference   2309.13103v1   2023-09-22T17:35:03Z  
+    Text as Causal Mediators: Research Design for Causal Estimates of Differential Treatment of So
+> cial Groups via Language Aspects   2109.07542v1   2021-09-15T19:15:35Z  
 
 . 
 . display as text _n "GitHub information:"
@@ -767,79 +657,66 @@ GitHub information:
 >     clean noobs abbreviate(30)
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Example 9: Combine detail and save options
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . display as text "Example 9: Combine detail + save to memory"
 Example 9: Combine detail + save to memory
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . clear
 
 . findar graph neural network, maxresults(2) detail save
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: graph neural network
 Max results: 2
 GitHub search: ENABLED (default)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 2 papers.
 
 Starting GitHub search...
 
-  [1/2] A Survey on Graph Classification and Link Prediction ba...
+  [1/2] A Tutorial about Random Neural Networks in Supervised L...
 
-  [2/2] Graph Structure of Neural Networks...
+  [2/2] Learning Universal Graph Neural Network Embeddings With...
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 GitHub Search Results:
   Found from arXiv metadata: 0
   Not found:                 2
   Success rate:              0%
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Detailed Results
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[1] A Survey on Graph Classification and Link Prediction based on GNN
-Authors: Xingyu Liu, Juan Chen, Quan Wen
-Published: 2023-07-03T09:08:01Z
-
-Links: arXiv  Google  
--------------------------------------------------------------------------------
-> -
-
-[2] Graph Structure of Neural Networks
-Authors: Jiaxuan You, Jure Leskovec, Kaiming He, Saining Xie
-Published: 2020-07-13T17:59:31Z
+[1] A Tutorial about Random Neural Networks in Supervised Learning
+Authors: Sebastián Basterrech, Gerardo Rubino
+Published: 2016-09-15T20:21:30Z
 
 Links: arXiv  Google  
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
+
+[2] Learning Universal Graph Neural Network Embeddings With Aid Of Transfer Learning
+Authors: Saurabh Verma, Zhi-Li Zhang
+Published: 2019-09-22T20:21:15Z
+
+Links: arXiv  Google  
+--------------------------------------------------------------------------------
 
 Data saved to memory (use browse to view)
 
@@ -863,86 +740,72 @@ Saved papers:
 
 . list title authors in 1/2, clean noobs abbreviate(40)
 
-                                                                title          
->                                      authors  
-    A Survey on Graph Classification and Link Prediction based on GNN          
->              Xingyu Liu, Juan Chen, Quan Wen  
-                                   Graph Structure of Neural Networks   Jiaxuan
->  You, Jure Leskovec, Kaiming He, Saining Xie  
+                                                                               title              
+>                   authors  
+                      A Tutorial about Random Neural Networks in Supervised Learning   Sebastián B
+> asterrech, Gerardo Rubino  
+    Learning Universal Graph Neural Network Embeddings With Aid Of Transfer Learning            Sa
+> urabh Verma, Zhi-Li Zhang  
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Example 10: Check stored results
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . display as text "Example 10: Stored results"
 Example 10: Stored results
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . findar bayesian inference, maxresults(3)
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: bayesian inference
 Max results: 3
 GitHub search: ENABLED (default)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 3 papers.
 
 Starting GitHub search...
 
-  [1/3] Combining Bayesian Inference and Reinforcement Learning...
+  [1/3] Bayesian Nonparametric Weighted Sampling Inference...
 
-  [2/3] Bayesian inference for data-efficient, explainable, and...
+  [2/3] Bayesian Inference in Quantum Programs...
 
-  [3/3] Probabilistic Inferences in Bayesian Networks...
+  [3/3] Approximate Inference for Fully Bayesian Gaussian Proce...
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 GitHub Search Results:
   Found from arXiv metadata: 0
   Not found:                 3
   Success rate:              0%
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Top 3 results (arXiv | PDF | DOI | GitHub)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[1] Combining Bayesian Inference and Reinforcement Learning for 
-Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+[1] Bayesian Nonparametric Weighted Sampling Inference
+Links: arXiv PDF DOI
+--------------------------------------------------------------------------------
 
-[2] Bayesian inference for data-efficient, explainable, and safe
+[2] Bayesian Inference in Quantum Programs
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[3] Probabilistic Inferences in Bayesian Networks
+[3] Approximate Inference for Fully Bayesian Gaussian Process Re
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . display as text _n "Stored results:"
@@ -959,24 +822,20 @@ Stored results:
   Not found: 3
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Example 11: Search for specific topics
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . display as text "Example 11: Specific research topics"
 Example 11: Specific research topics
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . * Natural language processing
@@ -986,49 +845,40 @@ Topic: Natural Language Processing
 
 . findar natural language processing, maxresults(2)
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: natural language processing
 Max results: 2
 GitHub search: ENABLED (default)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 2 papers.
 
 Starting GitHub search...
 
-  [1/2] Natural Language Processing using Hadoop and KOSHIK...
+  [1/2] An Open Natural Language Processing Development Framewo...
 
-  [2/2] Integrating AI Planning with Natural Language Processin...
+  [2/2] A Comprehensive Review of State-of-The-Art Methods for ...
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 GitHub Search Results:
   Found from arXiv metadata: 0
   Not found:                 2
   Success rate:              0%
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Top 2 results (arXiv | PDF | DOI | GitHub)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[1] Natural Language Processing using Hadoop and KOSHIK
+[1] An Open Natural Language Processing Development Framework fo
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[2] Integrating AI Planning with Natural Language Processing: A 
-Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+[2] A Comprehensive Review of State-of-The-Art Methods for Java 
+Links: arXiv PDF DOI
+--------------------------------------------------------------------------------
 
 . 
 . * Time series analysis  
@@ -1038,127 +888,102 @@ Topic: Time Series
 
 . findar time series forecasting, maxresults(2)
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: time series forecasting
 Max results: 2
 GitHub search: ENABLED (default)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 2 papers.
 
 Starting GitHub search...
 
-  [1/2] Inter Time Series Sales Forecasting...
+  [1/2] LLM-Mixer: Multiscale Mixing in LLMs for Time Series Fo...
 
-  [2/2] Optimizing Time Series Forecasting Architectures: A Hie...
+  [2/2] Probabilistic Hierarchical Forecasting with Deep Poisso...
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 GitHub Search Results:
   Found from arXiv metadata: 0
   Not found:                 2
   Success rate:              0%
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Top 2 results (arXiv | PDF | DOI | GitHub)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[1] Inter Time Series Sales Forecasting
+[1] LLM-Mixer: Multiscale Mixing in LLMs for Time Series Forecas
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[2] Optimizing Time Series Forecasting Architectures: A Hierarch
+[2] Probabilistic Hierarchical Forecasting with Deep Poisson Mix
 Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Example 12: Combine detail + abstract + save
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-. display as text "Example 12: Comprehensive example (detail + abstract + save)
-> "
+. display as text "Example 12: Comprehensive example (detail + abstract + save)"
 Example 12: Comprehensive example (detail + abstract + save)
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . clear
 
 . findar BERT language model, maxresults(2) detail abstract save
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: BERT language model
 Max results: 2
 GitHub search: ENABLED (default)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 2 papers.
 
 Starting GitHub search...
 
-  [1/2] BERT-DRE: BERT with Deep Recursive Encoder for Natural ...
+  [1/2] The Road to Know-Where: An Object-and-Room Informed Seq...
 
-  [2/2] Transferring BERT Capabilities from High-Resource to Lo...
-
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 GitHub Search Results:
-  Found from arXiv metadata: 0
-  Not found:                 2
-  Success rate:              0%
--------------------------------------------------------------------------------
-> -
+  Found from arXiv metadata: 1
+  Not found:                 0
+  Success rate:              50%
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Detailed Results
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[1] BERT-DRE: BERT with Deep Recursive Encoder for Natural Language Sentence Ma
-> tching
-Authors: Ehsan Tavan, Ali Rahmati, Maryam Najafi, Saeed Bibak, Zahed Rahmati
-Published: 2021-11-03T12:56:13Z
+[1] The Road to Know-Where: An Object-and-Room Informed Sequential BERT for Indoor Vision-Language
+>  Navigation
+Authors: Yuankai Qi, Zizheng Pan, Yicong Hong, Ming-Hsuan Yang, Anton van den Hengel, Qi Wu
+Published: 2021-04-09T02:44:39Z
 
-Links: arXiv  Google  
--------------------------------------------------------------------------------
-> -
+Links: arXiv  Google  GitHub(YuankaiQi/ORIST_★16_C++)
+--------------------------------------------------------------------------------
 
-[2] Transferring BERT Capabilities from High-Resource to Low-Resource Languages
->  Using Vocabulary Matching
-Authors: Piotr Rybak
-Published: 2024-02-22T09:49:26Z
+[2] TinyBERT: Distilling BERT for Natural Language Understanding
+Authors: Xiaoqi Jiao, Yichun Yin, Lifeng Shang, Xin Jiang, Xiao Chen, Linlin Li, Fang Wang, Qun Li
+> u
+Published: 2019-09-23T13:05:35Z
 
 Links: arXiv  Google  
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 Data saved to memory (use browse to view)
 
@@ -1176,71 +1001,58 @@ Sorted by:
      Note: Dataset has changed since last saved.
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Example 13: Search without saving (default behavior)
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . display as text "Example 13: Quick search without saving data"
 Example 13: Quick search without saving data
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
 . findar quantum computing, maxresults(2)
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 arXiv Search + GitHub Integration
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Query: quantum computing
 Max results: 2
 GitHub search: ENABLED (default)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Searching arXiv...
 Found 2 papers.
 
 Starting GitHub search...
 
-  [1/2] The Rise of Quantum Internet Computing...
+  [1/2] Tierkreis: A Dataflow Framework for Hybrid Quantum-Clas...
 
-  [2/2] Unconventional Quantum Computing Devices...
+  [2/2] Quantum Computing: Vision and Challenges...
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 GitHub Search Results:
   Found from arXiv metadata: 0
   Not found:                 2
   Success rate:              0%
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 Top 2 results (arXiv | PDF | DOI | GitHub)
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
-[1] The Rise of Quantum Internet Computing
-Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+[1] Tierkreis: A Dataflow Framework for Hybrid Quantum-Classical
+Links: arXiv PDF DOI
+--------------------------------------------------------------------------------
 
-[2] Unconventional Quantum Computing Devices
-Links: arXiv PDF
--------------------------------------------------------------------------------
-> -
+[2] Quantum Computing: Vision and Challenges
+Links: arXiv PDF DOI
+--------------------------------------------------------------------------------
 
 . 
 . display as text _n "Check if data exists:"
@@ -1259,11 +1071,9 @@ Check if data exists:
 . }
 
 . 
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . * Cleanup
-. *****************************************************************************
-> ***
+. ********************************************************************************
 . 
 . capture erase findar_results.dta
 
@@ -1271,8 +1081,7 @@ Check if data exists:
 . display as text _n(2) "{hline 80}"
 
 
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . display as text "All examples completed successfully!"
 All examples completed successfully!
@@ -1281,10 +1090,12 @@ All examples completed successfully!
 For more information: help findar
 
 . display as text "{hline 80}"
--------------------------------------------------------------------------------
-> -
+--------------------------------------------------------------------------------
 
 . 
-. * COMMENTED OUT BY MCP: log close
-. 
-. capture log close _all
+. log close
+      name:  <unnamed>
+       log:  D:\User\private\Desktop\stata\findar_final\findar_example.log
+  log type:  text
+ closed on:  16 Dec 2025, 19:50:29
+--------------------------------------------------------------------------------------------------

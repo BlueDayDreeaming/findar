@@ -202,13 +202,25 @@ Stata package. https://github.com/BlueDayDreeaming/findar
 
 ## Authors
 
-**Yujun Lian**
-- Affiliation: Sun Yat-sen University, Guangzhou, China
-- Email: arlionn@163.com
-
 **Chucheng Wan**
 - Affiliation: Sun Yat-sen University, Guangzhou, China
 - Email: chucheng.wan@outlook.com
+
+**Yile Zhang**
+- Affiliation: Sun Yat-sen University, Guangzhou, China
+- Email: zhangyle5@mail2.sysu.edu.cn
+
+**Xinyi Huang**
+- Affiliation: Sun Yat-sen University, Guangzhou, China
+- Email: huangxy577@mail2.sysu.edu.cn
+
+**Qin Qin**
+- Affiliation: Sun Yat-sen University, Guangzhou, China
+- Email: qinq25@mail2.sysu.edu.cn
+
+**Xinyi Yi**
+- Affiliation: Sun Yat-sen University, Guangzhou, China
+- Email: 3031727931@qq.com
 
 ## Changelog
 

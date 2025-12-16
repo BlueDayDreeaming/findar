@@ -1,135 +1,65 @@
-Dear Professor Christopher F. Baum,
+                                                        December 16, 2025
 
-We are writing to request the distribution of our new Stata package "findar" 
-through the Boston College Statistical Software Components (SSC) archive.
+Professor Christopher F. Baum
+Department of Economics
+Boston College
+Chestnut Hill, MA 02467
+USA
 
-PACKAGE INFORMATION:
-====================
+Dear Professor Baum,
 
-Package Name: findar
-Version: 1.1.5
-Release Date: December 16, 2025
-License: MIT
-Stata Version Required: 16.0 or later
-Platforms: Windows and macOS
+We are pleased to submit our Stata package "findar" for consideration in the 
+Boston College Statistical Software Components (SSC) archive.
 
-DESCRIPTION:
-============
+findar is designed to help researchers discover academic papers on arXiv and 
+automatically locate their associated GitHub repositories. With a single 
+command, users can search for papers by keywords and immediately see which 
+ones have publicly available code implementations, along with repository 
+statistics such as star counts and programming languages used.
 
-findar is a Stata package that seamlessly integrates arXiv paper search 
-with automatic GitHub repository discovery. Users can search for academic 
-papers on arXiv and automatically locate associated GitHub repositories 
-containing code implementations.
+The package supports both a simplified syntax for quick searches (e.g., 
+"findar machine learning") and a standard syntax with full options for more 
+refined queries. Results can be displayed in the console or saved as Stata 
+datasets for further analysis.
 
-Key Features:
-- Query academic papers from arXiv.org by keywords
-- Automatically extract and search for GitHub repositories from paper metadata
-- Display papers with star counts and repository information
-- Export results as Stata datasets for further analysis
-- Support for multiple search options (maxresults, detail, abstract, etc.)
+Key features include:
+  - Keyword-based search of arXiv papers
+  - Automatic extraction of GitHub links from paper metadata
+  - Display of repository star counts and languages
+  - Export functionality to Stata datasets
+  - Clickable links to papers, PDFs, DOIs, and repositories
 
-AUTHORS:
-========
+The package requires Stata 16.0 or later and runs on Windows and macOS 
+systems. It uses only Stata's native commands to access the arXiv and GitHub 
+APIs, with no external dependencies.
 
-1. Chucheng Wan (chucheng.wan@outlook.com)
-   Sun Yat-sen University, Guangzhou, China
+Attached is a .zip file (findar_ssc.zip) containing the following files:
+  - findar.ado (main program, version 1.1.5)
+  - findar.sthlp (help documentation)
 
-2. Yile Zhang (zhangyle5@mail2.sysu.edu.cn)
-   Sun Yat-sen University, Guangzhou, China
+This work was developed at Sun Yat-sen University in Guangzhou, China. The 
+contributing authors are:
 
-3. Xinyi Huang (huangxy577@mail2.sysu.edu.cn)
-   Sun Yat-sen University, Guangzhou, China
+  Chucheng Wan        chucheng.wan@outlook.com
+  Yile Zhang          zhangyle5@mail2.sysu.edu.cn
+  Xinyi Huang         huangxy577@mail2.sysu.edu.cn
+  Qin Qin             qinq25@mail2.sysu.edu.cn
+  Xinyi Yi            3031727931@qq.com
 
-4. Qin Qin (qinq25@mail2.sysu.edu.cn)
-   Sun Yat-sen University, Guangzhou, China
+The complete source code is available at:
+https://github.com/BlueDayDreeaming/findar
 
-5. Xinyi Yi (3031727931@qq.com)
-   Sun Yat-sen University, Guangzhou, China
+We have thoroughly tested the package and believe it would be a valuable 
+addition to the SSC archive. Please let us know if you require any 
+modifications or additional information.
 
-REPOSITORY:
-===========
-
-GitHub: https://github.com/BlueDayDreeaming/findar
-
-INSTALLATION:
-=============
-
-Once approved, users can install the package using:
-net install findar, from("https://raw.githubusercontent.com/BlueDayDreeaming/findar/main/")
-
-Or through SSC:
-ssc install findar
-
-USAGE EXAMPLE:
-==============
-
-Basic search:
-    findar machine learning
-
-Search with options:
-    findar deep learning, maxresults(10) detail abstract
-
-Search without GitHub integration:
-    findar neural networks, nogithub
-
-Save results to dataset:
-    findar reinforcement learning, maxresults(5) save
-
-INCLUDED FILES:
-===============
-
-- findar.ado (Main program file)
-- findar.sthlp (Help file with examples and documentation)
-- findar_example.do (Example script demonstrating usage)
-- README.md (Package documentation)
-- LICENSE (MIT License)
-
-REQUIREMENTS:
-=============
-
-- Stata 16.0 or later
-- Windows or macOS system
-- Internet connection for arXiv and GitHub API access
-
-SYSTEM REQUIREMENTS:
-====================
-
-The package uses Stata's native copy command to query:
-- arXiv API: https://export.arxiv.org/api/query
-- GitHub API: https://api.github.com
-
-No additional dependencies or external software required.
-
-We believe findar will be a valuable addition to the SSC archive, providing 
-researchers with an efficient tool to discover both academic papers and their 
-related code repositories.
-
-We have thoroughly tested the package across different systems and use cases. 
-All files are ready for distribution.
-
-Please let us know if you require any additional information or modifications 
-before inclusion in the SSC archive.
-
-Thank you for considering our submission.
+Thank you for your time and consideration.
 
 Sincerely,
 
 Chucheng Wan
 On behalf of the findar development team
-Sun Yat-sen University, Guangzhou, China
+Sun Yat-sen University
+Guangzhou, China
 Email: chucheng.wan@outlook.com
 
----
-
-SUBMISSION CHECKLIST:
-====================
-[ ] Author information and contact details provided
-[ ] Package files (*.ado, *.sthlp) included
-[ ] Help file formatted correctly
-[ ] Example do-file provided
-[ ] License file included (MIT)
-[ ] GitHub repository URL provided
-[ ] Installation instructions included
-[ ] System requirements documented
-[ ] Package functionality tested
-[ ] Stata version compatibility confirmed (16.0+)
