@@ -1,8 +1,8 @@
 ********************************************************************************
 * findar_example.do
 * Example usage of the findar command
-* Author: BlueDayDreeaming
-* Date: 18oct2025
+* Authors: Chucheng Wan, Yile Zhang, Xinyi Huang, Qin Qin, Xinyi Yi
+* Date: 16dec2025
 * Version: 1.1.5
 ********************************************************************************
 

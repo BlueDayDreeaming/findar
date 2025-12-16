@@ -8,25 +8,25 @@ DOI:
 
 Title: findar - Search arXiv papers and discover GitHub repositories
 
-Author 1 name: Yujun Lian
+Author 1 name: Chucheng Wan
 Author 1 from: Sun Yat-sen University, Guangzhou, China
-Author 1 email: arlionn@163.com
+Author 1 email: chucheng.wan@outlook.com
 
-Author 2 name: Chucheng Wan
+Author 2 name: Yile Zhang
 Author 2 from: Sun Yat-sen University, Guangzhou, China
-Author 2 email: chucheng.wan@outlook.com
+Author 2 email: zhangyle5@mail2.sysu.edu.cn
 
-Author 3 name:  
-Author 3 from:  
-Author 3 email: 
+Author 3 name: Xinyi Huang
+Author 3 from: Sun Yat-sen University, Guangzhou, China
+Author 3 email: huangxy577@mail2.sysu.edu.cn
 
-Author 4 name:  
-Author 4 from:  
-Author 4 email: 
+Author 4 name: Qin Qin
+Author 4 from: Sun Yat-sen University, Guangzhou, China
+Author 4 email: qinq25@mail2.sysu.edu.cn
 
-Author 5 name:  
-Author 5 from:  
-Author 5 email: 
+Author 5 name: Xinyi Yi
+Author 5 from: Sun Yat-sen University, Guangzhou, China
+Author 5 email: 3031727931@qq.com
 
 Help keywords: findar, arXiv, GitHub, search, citation, bibliography, research
 

@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.1.1  18oct2025}{...}
+{* *! version 1.1.1  16dec2025}{...}
 {viewerjumpto "Syntax" "findar##syntax"}{...}
 {viewerjumpto "Description" "findar##description"}{...}
 {viewerjumpto "Options" "findar##options"}{...}
@@ -269,10 +269,14 @@ Corporate firewalls or proxy settings may affect functionality.
 
 
 {marker author}{...}
-{title:Author}
+{title:Authors}
 
 {pstd}
-BlueDayDreeaming{break}
+Chucheng Wan (chucheng.wan@outlook.com){break}
+Yile Zhang (zhangyle5@mail2.sysu.edu.cn){break}
+Xinyi Huang (huangxy577@mail2.sysu.edu.cn){break}
+Qin Qin (qinq25@mail2.sysu.edu.cn){break}
+Xinyi Yi (3031727931@qq.com){break}
 GitHub: https://github.com/BlueDayDreeaming/findar
 
 

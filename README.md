@@ -186,7 +186,7 @@ help findar
 If you use findar in your research, please cite:
 
 ```
-BlueDayDreeaming (2025). findar: Search arXiv papers with GitHub integration.
+Chucheng Wan, Yile Zhang, Xinyi Huang, Qin Qin, and Xinyi Yi (2025). findar: Search arXiv papers with GitHub integration.
 Stata package. https://github.com/BlueDayDreeaming/findar
 ```
 

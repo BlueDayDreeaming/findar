@@ -1,4 +1,4 @@
-*! findar.ado version 1.1.5  18oct2025
+*! findar.ado version 1.1.5  16dec2025
 
 program define findar, rclass
     version 16.0

@@ -6,10 +6,10 @@ d automatically finds associated GitHub repositories. It provides an
 d integrated workflow for discovering research papers and their code 
 d implementations.
 d
-d Distribution-Date: 20251018
+d Distribution-Date: 20251216
 d License: MIT
 d
-d Author: BlueDayDreeaming
+d Authors: Chucheng Wan, Yile Zhang, Xinyi Huang, Qin Qin, Xinyi Yi
 d Support: https://github.com/BlueDayDreeaming/findar
 d
 d Requires: Stata version 16.0 or later
