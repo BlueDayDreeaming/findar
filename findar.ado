@@ -1,4 +1,4 @@
-*! findar.ado version 1.1.6  17dec2025
+*! findar.ado version 1.1.7  17dec2025
 
 program define findar, rclass
     version 16.0
@@ -146,9 +146,9 @@ program define findar, rclass
         local not_found = 0
         
         forvalues i = 1/`count' {
-            local paper_title = title[`i']
-            local paper_comment = comment[`i']
-            local paper_summary = summary[`i']
+            mata: st_local("paper_title", st_sdata(`i', "title"))
+            mata: st_local("paper_comment", st_sdata(`i', "comment"))
+            mata: st_local("paper_summary", st_sdata(`i', "summary"))
             
             local title_short = usubstr(`"`paper_title'"', 1, 55)
             di as txt _n "  [`i'/`count'] " `"`title_short'"' "..."
@@ -324,15 +324,29 @@ program define findar, rclass
             local disp_id = arxiv_id[`i']
             local disp_doi = doi[`i']
             
-            * Only truncate if title is very long, add ellipsis
-            if ustrlen(`"`title_full'"') > 75 {
-                local title_short = usubstr(`"`title_full'"', 1, 72) + "..."
+            * Display title with line wrapping for long titles
+            local title_len = ustrlen(`"`title_full'"')
+            if `title_len' > 75 {
+                * First line with number prefix
+                local first_line = usubstr(`"`title_full'"', 1, 72)
+                di as txt _n "[" as res "`i'" as txt "] " as res `"`first_line'"'
+                * Remaining text with wrapping
+                local remaining = usubstr(`"`title_full'"', 73, .)
+                while ustrlen(`"`remaining'"') > 0 {
+                    if ustrlen(`"`remaining'"') > 76 {
+                        local next_line = usubstr(`"`remaining'"', 1, 76)
+                        di as res "    " `"`next_line'"'
+                        local remaining = usubstr(`"`remaining'"', 77, .)
+                    }
+                    else {
+                        di as res "    " `"`remaining'"'
+                        local remaining = ""
+                    }
+                }
             }
             else {
-                local title_short `"`title_full'"'
+                di as txt _n "[" as res "`i'" as txt "] " as res `"`title_full'"'
             }
-
-            di as txt _n "[" as res "`i'" as txt "] " as res `"`title_short'"'
             
             local links `"{browse "https://arxiv.org/abs/`disp_id'":arXiv} {browse "https://arxiv.org/pdf/`disp_id'.pdf":PDF}"'
             if "`disp_doi'" != "" {
@@ -378,13 +392,43 @@ program define findar, rclass
             mata: st_local("disp_authors", st_sdata(`i', "authors"))
             local disp_published = published[`i']
             
-            * Display title
-            di as txt _n "[" as res "`i'" as txt "] " as res `"`disp_title'"'
+            * Display title with line wrapping
+            local title_len = ustrlen(`"`disp_title'"')
+            if `title_len' > 72 {
+                local first_line = usubstr(`"`disp_title'"', 1, 69)
+                di as txt _n "[" as res "`i'" as txt "] " as res `"`first_line'"'
+                local remaining = usubstr(`"`disp_title'"', 70, .)
+                while ustrlen(`"`remaining'"') > 0 {
+                    if ustrlen(`"`remaining'"') > 76 {
+                        local next_line = usubstr(`"`remaining'"', 1, 76)
+                        di as res "    " `"`next_line'"'
+                        local remaining = usubstr(`"`remaining'"', 77, .)
+                    }
+                    else {
+                        di as res "    " `"`remaining'"'
+                        local remaining = ""
+                    }
+                }
+            }
+            else {
+                di as txt _n "[" as res "`i'" as txt "] " as res `"`disp_title'"'
+            }
             
             * Display authors with potential wrapping
-            if ustrlen(`"`disp_authors'"') > 75 {
-                di as txt "Authors: " as res usubstr(`"`disp_authors'"', 1, 75)
-                di as res "         " usubstr(`"`disp_authors'"', 76, .)
+            local auth_len = ustrlen(`"`disp_authors'"')
+            if `auth_len' > 70 {
+                di as txt "Authors: " as res usubstr(`"`disp_authors'"', 1, 67)
+                local auth_remain = usubstr(`"`disp_authors'"', 68, .)
+                while ustrlen(`"`auth_remain'"') > 0 {
+                    if ustrlen(`"`auth_remain'"') > 76 {
+                        di as res "         " usubstr(`"`auth_remain'"', 1, 76)
+                        local auth_remain = usubstr(`"`auth_remain'"', 77, .)
+                    }
+                    else {
+                        di as res "         " `"`auth_remain'"'
+                        local auth_remain = ""
+                    }
+                }
             }
             else {
                 di as txt "Authors: " as res `"`disp_authors'"'
