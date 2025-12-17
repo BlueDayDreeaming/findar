@@ -1,4 +1,4 @@
-*! findar.ado version 1.1.5  16dec2025
+*! findar.ado version 1.1.6  17dec2025
 
 program define findar, rclass
     version 16.0
@@ -319,16 +319,18 @@ program define findar, rclass
         }
         di as txt "{hline 80}"
         forvalues i = 1/`count' {
-            local disp_title = title[`i']
+            * Use mata to get full title and avoid macro truncation
+            mata: st_local("title_full", st_sdata(`i', "title"))
+            local disp_id = arxiv_id[`i']
+            local disp_doi = doi[`i']
+            
             * Only truncate if title is very long, add ellipsis
-            if ustrlen(\`"\`disp_title'"') > 75 {
-                local title_short = usubstr(\`"\`disp_title'"', 1, 72) + "..."
+            if ustrlen(`"`title_full'"') > 75 {
+                local title_short = usubstr(`"`title_full'"', 1, 72) + "..."
             }
             else {
-                local title_short = \`"\`disp_title'"'
+                local title_short `"`title_full'"'
             }
-            capture local disp_id = arxiv_id[`i']
-            capture local disp_doi = doi[`i']
 
             di as txt _n "[" as res "`i'" as txt "] " as res `"`title_short'"'
             
@@ -371,20 +373,21 @@ program define findar, rclass
         di as txt "{hline 80}"
         
         forvalues i = 1/`count' {
-            local disp_title = title[`i']
-            local disp_authors = authors[`i']
+            * Use mata to get full strings and avoid macro truncation
+            mata: st_local("disp_title", st_sdata(`i', "title"))
+            mata: st_local("disp_authors", st_sdata(`i', "authors"))
             local disp_published = published[`i']
             
-            * Display title with wrapping if needed
-            di as txt _n "[" as res "\`i'" as txt "] " as res \`"\`disp_title'"'
+            * Display title
+            di as txt _n "[" as res "`i'" as txt "] " as res `"`disp_title'"'
             
             * Display authors with potential wrapping
-            if ustrlen(\`"\`disp_authors'"') > 75 {
-                di as txt "Authors: " as res usubstr(\`"\`disp_authors'"', 1, 75)
-                di as res "         " usubstr(\`"\`disp_authors'"', 76, .)
+            if ustrlen(`"`disp_authors'"') > 75 {
+                di as txt "Authors: " as res usubstr(`"`disp_authors'"', 1, 75)
+                di as res "         " usubstr(`"`disp_authors'"', 76, .)
             }
             else {
-                di as txt "Authors: " as res \`"\`disp_authors'"'
+                di as txt "Authors: " as res `"`disp_authors'"'
             }
             di as txt "Published: " as res `"`disp_published'"'
             
