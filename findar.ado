@@ -320,7 +320,13 @@ program define findar, rclass
         di as txt "{hline 80}"
         forvalues i = 1/`count' {
             local disp_title = title[`i']
-            local title_short = usubstr(`"`disp_title'"', 1, 60)
+            * Only truncate if title is very long, add ellipsis
+            if ustrlen(\`"\`disp_title'"') > 75 {
+                local title_short = usubstr(\`"\`disp_title'"', 1, 72) + "..."
+            }
+            else {
+                local title_short = \`"\`disp_title'"'
+            }
             capture local disp_id = arxiv_id[`i']
             capture local disp_doi = doi[`i']
 
@@ -369,8 +375,17 @@ program define findar, rclass
             local disp_authors = authors[`i']
             local disp_published = published[`i']
             
-            di as txt _n "[" as res "`i'" as txt "] " as res `"`disp_title'"'
-            di as txt "Authors: " as res `"`disp_authors'"'
+            * Display title with wrapping if needed
+            di as txt _n "[" as res "\`i'" as txt "] " as res \`"\`disp_title'"'
+            
+            * Display authors with potential wrapping
+            if ustrlen(\`"\`disp_authors'"') > 75 {
+                di as txt "Authors: " as res usubstr(\`"\`disp_authors'"', 1, 75)
+                di as res "         " usubstr(\`"\`disp_authors'"', 76, .)
+            }
+            else {
+                di as txt "Authors: " as res \`"\`disp_authors'"'
+            }
             di as txt "Published: " as res `"`disp_published'"'
             
             local disp_arxiv_id = arxiv_id[`i']
@@ -500,9 +515,9 @@ program define findar_parse_xml, rclass
     
     clear
     gen str50 arxiv_id = ""
-    gen str500 title = ""
+    gen strL title = ""
     gen strL summary = ""
-    gen str1000 authors = ""
+    gen strL authors = ""
     gen str30 published = ""
     gen strL comment = ""
     gen str100 doi = ""
@@ -514,7 +529,10 @@ program define findar_parse_xml, rclass
     while r(eof) == 0 {
         * Skip XML declaration line which may cause parsing issues
         if !ustrregexm(`"`line'"', "^<\?xml") {
-            local content `"`content'`line'"'
+            * Check if content is getting too long (Stata has string length limits)
+            if ustrlen(`"`content'"') < 2000000 {
+                local content `"`content'`line'"'
+            }
         }
         file read `fh' line
     }
